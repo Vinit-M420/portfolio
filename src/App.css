@@ -1,2 +1,29 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
 
+:root {
+  --color-bg: #1E1E1E;
+  --color-text: #FFFFFF;
+  --color-orange: #FF5F57;
+  --color-green: #3CCF91;
+  --color-blue: #4AA8FF;
+  --color-purple: #9B6BFF;
+}
+
+@layer utilities {
+  .bg-orange { background-color: #FF5F57; }
+  .bg-green { background-color: #3CCF91; }
+  .bg-blue { background-color: #4AA8FF; }
+  .bg-purple { background-color: #9B6BFF; }
+  .text-orange { color: #FF5F57; }
+  .text-green { color: #3CCF91; }
+  .text-blue { color: #4AA8FF; }
+  .text-purple {color: #9B6BFF; }
+}
+
+
+body {
+  background-color: var(--color-bg);
+  margin: 0;
+  font-family: 'Lora', serif;
+  color: var(--color-text);
+}
