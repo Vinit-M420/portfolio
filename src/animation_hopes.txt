@@ -1,0 +1,11 @@
+I think Animating Hero page is enough 
+
+Hero Page text: 
+    Hey I'm Vinit
+    Software Engineer
+    Based in Mumbai
+    Find me at (GH) (X) 
+
+Hey will pop out with energy. I'm Vinit will come in smoothly, word by word
+Software Engineer font color will be black, the bg color will come it left to right like leveling up
+Based in will come in like Im vinit, Mumbai will level up
