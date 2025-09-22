@@ -56,8 +56,8 @@ const Hero = () => {
 
 
     return (
-        <div className="relative flex justify-center items-center mt-15 p-6 gap-20 max-w-4xl mx-auto mb-10
-            border border-neutral-700 ">
+        <div className="relative flex justify-center items-center mt-10 p-6 gap-20 max-w-4xl mx-auto mb-10
+            border border-neutral-700">
             <span className="absolute top-0 left-0 w-6 h-6 border-t-1 border-l-1 border-neutral-500"></span>
             <span className="absolute top-0 right-0 w-6 h-6 border-t-1 border-r-1 border-neutral-500"></span>
             <span className="absolute bottom-0 left-0 w-6 h-6 border-b-1 border-l-1 border-neutral-500"></span>

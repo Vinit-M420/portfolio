@@ -2,28 +2,27 @@ import { useNavbarStore } from "../store";
 
 const Navbar = () => {
     const { navbarState, setNavbarState } = useNavbarStore();
+
     return (
         <div className="border border-neutral-700 rounded-2xl p-2 
                 flex justify-center items-center w-fit mx-auto gap-3 mt-5">
-            <div className={`text-lg text-white cursor-pointer px-2
-                ${navbarState === "about" ? `text-orange font-bold bg-white rounded-xl`: ``}`}
+            <a className={`text-lg cursor-pointer px-2 
+                ${navbarState === "about" ? `text-black font-bold bg-white rounded-xl`: `text-gray-300`}`}
                 onClick={() => setNavbarState('about')}>
-                About
-            </div>
-            <div className={`text-lg text-white cursor-pointer px-2
-                ${navbarState === 'projects' ? `text-green font-bold bg-white rounded-xl` : ``}`}
+                Home
+            </a>
+            <a className={`text-lg cursor-pointer px-2 
+                ${navbarState === 'projects' ? `text-black font-bold bg-green rounded-xl` : `text-gray-300`}`}
                 onClick={() => setNavbarState('projects')}>
-                Project
-            </div>
-            <div className={`text-lg text-white cursor-pointer px-2
-                ${navbarState === 'resume' ? `text-blue font-bold bg-white rounded-xl` : ``}`}
+                Projects
+            </a>
+            <a className={`text-lg cursor-pointer px-2
+                ${navbarState === 'resume' ? `text-black font-bold bg-blue rounded-xl` : `text-gray-300`}`}
                 onClick={() => setNavbarState('resume')}>
                 Resume
-            </div>
-
+            </a>
         </div>
     )
-
 }
 
 export default Navbar;

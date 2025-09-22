@@ -1,19 +1,17 @@
 import tripBucket from '../assets/tripbucket.png'
-import { ExternalLink, MoveRight  } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import github  from "../assets/github-mark-white.svg";
 import reddit from "../assets/redditarch.png";
-import { useNavbarStore } from '../store';
+import bookmark from "../assets/bookmark.png"
 
-const Projects = () => {
-    const {  setNavbarState } = useNavbarStore();
-    
+const AllProjects = () => {
     return (
-        <div className="flex flex-col gap-5 mx-auto max-w-4xl my-20">
+        <div className="flex flex-col gap-5 mx-auto max-w-4xl mt-20">
             <h1 className="font-bold text-4xl text-black w-fit bg-green px-2"> 
-                Projects
+                All Projects
             </h1>
 
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-stretch mt-10 mb-5">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-stretch my-10">
                 {/* Card 1 - TripBucket */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     
@@ -75,17 +73,38 @@ const Projects = () => {
                     </div>
                 </div>
 
+                {/* Card 3 - Mock Bookmark */}
+                <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
+                    
+                    <img src={bookmark} 
+                        className="w-full h-60 object-cover rounded-t-lg" />
+                    
+                    <div className="flex flex-col flex-grow p-5 gap-3">
+                        <h1 className='text-white text-lg font-bold leading-relaxed'>
+                            Bookmark Manager 
+                        </h1>
+
+                        <h2 className='text-white text-sm font-light font-sans flex-grow'>
+                            Frontend only website using Tailwind CSS
+                        </h2>
+
+                        <div className='grid grid-cols-1 gap-2'>
+                            <a rel="external" target='_blank' href="https://tailwindbookmark-vinit.vercel.app/" 
+                                className="col-span-1 text-white border border-neutral-700 text-md flex gap-2 
+                                justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
+                                hover:border-zinc-600 hover:bg-stone-800">
+                                <ExternalLink className='size-4'/>
+                                <span>View</span>   
+                            </a>
+            
+                        </div>
+                    </div>
+                </div>
+
             </div>
             
-            <a  className="text-white border border-neutral-700 text-lg flex gap-2 
-                                justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
-                                hover:border-zinc-600 hover:bg-stone-800 mx-auto px-20"
-                onClick={() => setNavbarState("projects")}>
-                Show All Projects
-                <MoveRight className='size-5'/>
-            </a>
         </div>
     )
 }
 
-export default Projects;
+export default AllProjects;

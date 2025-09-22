@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-type NavbarState = "about" | "projects" | "resume";
+export type NavbarState = "about" | "projects" | "resume";
 
 export interface NavbarProps {
   navbarState: NavbarState;
@@ -8,7 +8,7 @@ export interface NavbarProps {
 };
 
 export const useNavbarStore = create<NavbarProps>((set) => ({
-    navbarState: 'about',
+    navbarState: "about",
     setNavbarState: (state: NavbarState) => set({ navbarState: state }),
 
 }));
