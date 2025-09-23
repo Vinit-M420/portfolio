@@ -10,31 +10,6 @@ import gsap from "gsap";
 const Hero = () => {
     const [mypic, setMyPic] = useState(false);
     const imageRef = useRef(null);
- 
-
-    // useEffect(() => {
-    //     gsap.timeline()
-    //         .fromTo("#hey", 
-    //             {scale: 0, opacity: 0, color: "white"}, 
-    //             {scale: 1.2, opacity: 1, duration: 0.2, ease: "back.out(1.7)"}
-    //         )
-    //         .to("#hey", 
-    //             {scale: 1, duration: 0.2, ease: "power2.out"}
-    //         )
-    //         .fromTo("#im", 
-    //             {scale: 0, opacity: 0, color: "white"}, 
-    //             {scale: 1.1, opacity: 1, duration: 0.2, ease: "back.out(1.7)", delay: 0.1}
-    //         )
-    //         .to("#im", 
-    //             {scale: 1, duration: 0.2, ease: "power2.out"}
-    //         )
-    //         .from("#intro", 
-    //             {scale: 0, opacity: 0, duration: 0.1, ease: "back.out(1.0)", delay: 0.1}
-    //         )
-    //         .to("#intro", 
-    //             {scale: 1, opacity: 1}
-    //         )
-    // }, []);
 
     
     const handleImageSwap = () => {

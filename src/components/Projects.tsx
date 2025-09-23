@@ -3,22 +3,43 @@ import { ExternalLink, MoveRight  } from 'lucide-react';
 import github  from "../assets/github-mark-white.svg";
 import reddit from "../assets/redditarch.png";
 import { useNavbarStore } from '../store';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
     const {  setNavbarState } = useNavbarStore();
+    const projectRef = useRef<HTMLDivElement | null>(null);
+    
+    useEffect(() => {
+        if (projectRef.current) {
+        
+        gsap.fromTo(projectRef.current, 
+            {y: -50, opacity: 0, duration: 3, ease: "power3.out" }, 
+            {y: 0, opacity: 1, duration: 1, 
+                scrollTrigger: {
+                trigger: projectRef.current,  start: "top 80%", 
+                toggleActions: "play none none none", // play only once
+                },
+            });
+        }
+    }, []);
     
     return (
-        <div className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm my-20">
+        <div ref={projectRef} className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm my-20">
             <h1 className="font-bold lg:text-4xl text-2xl text-black w-fit bg-green px-2"> 
                 Projects
             </h1>
 
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-stretch mt-10 mb-5">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-5 justify-center mt-10 mb-5">
                 {/* Card 1 - TripBucket */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    
-                    <img src={tripBucket} 
-                        className="w-full h-60 lg:object-cover md:object-contain object-stretch rounded-t-lg" />
+                    <div className="aspect-video overflow-hidden rounded-t-xl">
+                        <img src={tripBucket} 
+                            className="w-full h-full object-cover" />
+                    </div>
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -50,9 +71,10 @@ const Projects = () => {
 
                 {/* Card 2 - Reddit Data Pipeline */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    
-                    <img src={reddit} 
-                        className="w-full h-60 lg:object-fill md:object-contain object-cover rounded-t-lg" />
+                    <div className="aspect-video overflow-hidden rounded-t-xl">
+                        <img src={reddit} 
+                            className="w-full h-full object-cover" />
+                    </div>
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>

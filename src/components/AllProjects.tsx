@@ -3,10 +3,25 @@ import { ExternalLink } from 'lucide-react';
 import github  from "../assets/github-mark-white.svg";
 import reddit from "../assets/redditarch.png";
 import bookmark from "../assets/bookmark.png"
+import { useEffect, useRef } from 'react';
+import gsap from "gsap";
+
 
 const AllProjects = () => {
+    const allPRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (allPRef.current) {
+        gsap.fromTo(
+            allPRef.current,
+            { y: -50, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" }
+        );
+        }
+    }, []);
+
     return (
-        <div className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm mt-20">
+        <div ref={allPRef} className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm mt-20">
             <h1 className="font-bold text-4xl text-black w-fit bg-green px-2"> 
                 All Projects
             </h1>
@@ -14,9 +29,10 @@ const AllProjects = () => {
             <div className="grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-stretch my-10">
                 {/* Card 1 - TripBucket */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    
-                    <img src={tripBucket} 
-                        className="w-full h-60 lg:object-cover object-contain rounded-t-lg" />
+                    <div className="aspect-video overflow-hidden rounded-t-xl">
+                        <img src={tripBucket} 
+                            className="w-full h-full object-cover" />
+                    </div>
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -48,9 +64,10 @@ const AllProjects = () => {
 
                 {/* Card 2 - Reddit Data Pipeline */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    
-                    <img src={reddit} 
-                        className="w-full h-60 lg:object-fill md:object-contain object-cover rounded-t-lg" />
+                    <div className="aspect-video overflow-hidden rounded-t-xl">
+                        <img src={reddit} 
+                            className="w-full h-full object-cover" />
+                    </div>
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -75,9 +92,10 @@ const AllProjects = () => {
 
                 {/* Card 3 - Mock Bookmark */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    
-                    <img src={bookmark} 
-                        className="w-full h-60 lg:object-cover object-contain rounded-t-lg" />
+                    <div className="aspect-video overflow-hidden rounded-t-xl">
+                        <img src={bookmark} 
+                            className="w-full h-full object-cover" />
+                    </div>
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
