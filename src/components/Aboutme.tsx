@@ -1,7 +1,7 @@
 const Aboutme = () => {
     return (
-        <div className="flex flex-col gap-5 mx-auto max-w-4xl justify-center my-15">
-            <h1 className="font-bold text-4xl text-black w-fit bg-orange px-2"> 
+        <div className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm justify-center my-15">
+            <h1 className="font-bold lg:text-4xl text-2xl text-black w-fit bg-orange px-2"> 
                 {/* {bg-orange px-2 } */}
                 About me
             </h1>

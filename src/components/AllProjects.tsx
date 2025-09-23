@@ -6,7 +6,7 @@ import bookmark from "../assets/bookmark.png"
 
 const AllProjects = () => {
     return (
-        <div className="flex flex-col gap-5 mx-auto max-w-4xl mt-20">
+        <div className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm mt-20">
             <h1 className="font-bold text-4xl text-black w-fit bg-green px-2"> 
                 All Projects
             </h1>
@@ -16,7 +16,7 @@ const AllProjects = () => {
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     
                     <img src={tripBucket} 
-                        className="w-full h-60 object-cover rounded-t-lg" />
+                        className="w-full h-60 lg:object-cover object-contain rounded-t-lg" />
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -50,7 +50,7 @@ const AllProjects = () => {
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     
                     <img src={reddit} 
-                        className="w-full h-60 object-fill rounded-t-lg" />
+                        className="w-full h-60 lg:object-fill md:object-contain object-cover rounded-t-lg" />
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -77,7 +77,7 @@ const AllProjects = () => {
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     
                     <img src={bookmark} 
-                        className="w-full h-60 object-cover rounded-t-lg" />
+                        className="w-full h-60 lg:object-cover object-contain rounded-t-lg" />
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -85,7 +85,7 @@ const AllProjects = () => {
                         </h1>
 
                         <h2 className='text-white text-sm font-light font-sans flex-grow'>
-                            Frontend only website using Tailwind CSS
+                            Frontend only website built using Tailwind CSS
                         </h2>
 
                         <div className='grid grid-cols-1 gap-2'>

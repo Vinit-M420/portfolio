@@ -8,8 +8,8 @@ const Projects = () => {
     const {  setNavbarState } = useNavbarStore();
     
     return (
-        <div className="flex flex-col gap-5 mx-auto max-w-4xl my-20">
-            <h1 className="font-bold text-4xl text-black w-fit bg-green px-2"> 
+        <div className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm my-20">
+            <h1 className="font-bold lg:text-4xl text-2xl text-black w-fit bg-green px-2"> 
                 Projects
             </h1>
 
@@ -18,7 +18,7 @@ const Projects = () => {
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     
                     <img src={tripBucket} 
-                        className="w-full h-60 object-cover rounded-t-lg" />
+                        className="w-full h-60 lg:object-cover md:object-contain object-stretch rounded-t-lg" />
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -52,7 +52,7 @@ const Projects = () => {
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     
                     <img src={reddit} 
-                        className="w-full h-60 object-fill rounded-t-lg" />
+                        className="w-full h-60 lg:object-fill md:object-contain object-cover rounded-t-lg" />
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -79,7 +79,7 @@ const Projects = () => {
             
             <a  className="text-white border border-neutral-700 text-lg flex gap-2 
                                 justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
-                                hover:border-zinc-600 hover:bg-stone-800 mx-auto px-20"
+                                hover:border-zinc-600 hover:bg-stone-800 mx-auto lg:px-20 px-10"
                 onClick={() => setNavbarState("projects")}>
                 Show All Projects
                 <MoveRight className='size-5'/>
