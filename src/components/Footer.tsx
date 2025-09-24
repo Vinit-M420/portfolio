@@ -8,7 +8,7 @@ const Footer = () => {
         <div className='flex flex-col gap-5 mb-10'>
             <span className="flex justify-center lg:w-4xl md:w-2xl w-xs border border-neutral-500 mx-auto"></span>
             {/* <div className='flex flex-col gap-5 py-5'> */}
-                <div className="flex justify-center items-center mx-auto gap-10">
+                <div className="flex justify-center items-center mx-auto md:gap-10 gap-5">
                     <a href="https://github.com/Vinit-M420"
                         className="w-10 h-10 flex items-center justify-center opacity-70 
                             hover:opacity-100 transition-opacity">
@@ -22,14 +22,12 @@ const Footer = () => {
                             className="lg:size-6 size-5 object-contain" />
                     </a>
                     
-                    <a href="mailto:hello@vinitm.com" 
+                    <a href="mailto:hey@vinitm.com" 
                         className="flex items-center justify-center opacity-70 
                         hover:opacity-100 transition-opacity">
                         <Mail className='size-8'/>
                         {/* <h2 className='tracking-wide'>hello@vinitm.com</h2> */}
-                    </a>
-                    
-                    
+                    </a>                   
                 </div>
 
                 {/* <div className='flex flex-col justify-center text-center mx-auto md:w-sm w-xs'>
