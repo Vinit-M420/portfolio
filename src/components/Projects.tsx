@@ -28,7 +28,7 @@ const Projects = () => {
     }, []);
     
     return (
-        <div ref={projectRef} className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-sm my-20">
+        <div ref={projectRef} className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-xs my-20">
             <h1 className="font-bold lg:text-4xl text-2xl text-black w-fit bg-green px-2"> 
                 Projects
             </h1>
@@ -102,8 +102,11 @@ const Projects = () => {
             <a  className="text-white border border-neutral-700 text-lg flex gap-2 
                                 justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
                                 hover:border-zinc-600 hover:bg-stone-800 mx-auto lg:px-20 px-10"
-                onClick={() => setNavbarState("projects")}>
-                Show All Projects
+                onClick={() => {
+                    setNavbarState("projects");
+                    window.scrollTo(0, 0);
+                    }}>
+                    Show All Projects
                 <MoveRight className='size-5'/>
             </a>
         </div>

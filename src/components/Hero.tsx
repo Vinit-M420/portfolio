@@ -31,8 +31,8 @@ const Hero = () => {
 
 
     return (
-        <div className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 max-w-4xl 
-            mx-auto my-10 border border-neutral-700 lg:w-4xl md:w-2xl w-sm">
+        <div className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 
+        max-w-4xl mx-auto my-10 border border-neutral-700 lg:w-4xl md:w-2xl w-xs">
 
             <span className="absolute top-0 left-0 w-6 h-6 border-t-1 border-l-1 border-neutral-500"></span>
             <span className="absolute top-0 right-0 w-6 h-6 border-t-1 border-r-1 border-neutral-500"></span>
@@ -51,7 +51,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col md:items-start items-center gap-5">
                 <h1 className="font-bold lg:text-5xl text-4xl">
                     <span id="hey" className="inline-block">Hey</span>{" "}
                     <span id="im" className="inline-block">I'm</span>{" "} 

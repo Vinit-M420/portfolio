@@ -7,6 +7,7 @@ import AllProjects from './components/AllProjects'
 import { useNavbarStore } from "./store";
 import { useEffect, useRef } from 'react'
 import gsap from "gsap";
+import Footer from './components/Footer'
 
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
 
   useEffect(() => {
       if (mainRef.current) {
-      gsap.fromTo(mainRef.current, {
-          y: -50, opacity: 0, duration: 1, ease: "power3.out" }, {y: 0, opacity: 1, duration: 1,});
+      gsap.fromTo(mainRef.current, 
+        {y: -50, opacity: 0, duration: 1, ease: "power2.out", }, 
+        {y: 0, opacity: 1, duration: 1,});
       }
       
   }, []);
@@ -33,6 +35,7 @@ function App() {
             <Aboutme />
           </div>
           <Projects />
+          <Footer />
         </>
       )}
 

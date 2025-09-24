@@ -2,7 +2,6 @@ import { useNavbarStore } from "../store";
 
 const Navbar = () => {
     const { navbarState, setNavbarState } = useNavbarStore();
-    
 
     return (
         <div className="border border-neutral-700 rounded-2xl p-2 
@@ -19,12 +18,12 @@ const Navbar = () => {
                 onClick={() => setNavbarState('projects')}>
                 Projects
             </a>
-            <a className={`md:text-lg text-md cursor-pointer px-2
+            {/* <a className={`md:text-lg text-md cursor-pointer px-2
                 ${navbarState === 'resume' ? `text-black font-bold bg-blue rounded-xl` : `
                     text-gray-300 hover:bg-gray-500 hover:rounded-2xl hover:text-white`}`}
                 onClick={() => setNavbarState('resume')}>
                 Resume
-            </a>
+            </a> */}
         </div>
     )
 }
