@@ -16,7 +16,7 @@ const Aboutme = () => {
                 </p>
                 
                 <p>
-                    Besides work, I enjoy watching movies & anime, meeting new people and trying out new food.                
+                    Besides work, I enjoy watching movies & anime, meeting new people, lifting weights and trying out new food.                
                 </p>
                 
                 <p>

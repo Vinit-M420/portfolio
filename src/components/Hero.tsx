@@ -10,16 +10,6 @@ import gsap from "gsap";
 const Hero = () => {
     const [mypic, setMyPic] = useState(false);
     const imageRef = useRef(null);
-    const heroRef = useRef<HTMLDivElement | null>(null);
-
-    // useEffect(() => {
-    //     if (heroRef.current) {
-    //     gsap.fromTo(heroRef.current, 
-    //     {y: -50, opacity: 0, duration: 1, ease: "power2.out", }, 
-    //     {y: 0, opacity: 1, duration: 1,});
-    //     }
-      
-    // }, []);
 
     useEffect(() => {
         const img = new Image();
@@ -46,8 +36,7 @@ const Hero = () => {
 
 
     return (
-        <div
-        className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 
+        <div className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 
         max-w-4xl mx-auto my-10 border border-neutral-700 lg:w-4xl md:w-2xl w-xs">
 
             <span className="absolute top-0 left-0 w-6 h-6 border-t-1 border-l-1 border-neutral-500"></span>
@@ -88,14 +77,14 @@ const Hero = () => {
                     </h1>
                     <div className="flex lg:gap-4 gap-2 items-center">
                         <a href="https://github.com/Vinit-M420"
-                        className="w-10 h-10 flex items-center justify-center opacity-70 
-                                hover:opacity-100 transition-opacity">
+                        className="w-10 h-10 flex items-center justify-center opacity-70
+                                    hover:opacity-100 transition-opacity">
                             <img src={github} alt='Github' 
                                 className="lg:size-8 size-7 object-contain" />
                         </a>
                         <a href="https://x.com/vinit_here"
                             className="w-10 h-10 flex items-center justify-center opacity-70 
-                            hover:opacity-100 transition-opacity">
+                                hover:opacity-100 transition-opacity">
                             <img src={xlogo} alt='X' 
                                 className="lg:size-6 size-5 object-contain" />
                         </a>

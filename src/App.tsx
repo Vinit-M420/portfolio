@@ -8,7 +8,6 @@ import { useNavbarStore } from "./store";
 import { useEffect, useRef } from 'react'
 import gsap from "gsap";
 import Footer from './components/Footer'
-// import Hero2 from './components/Hero2'
 
 
 function App() {
