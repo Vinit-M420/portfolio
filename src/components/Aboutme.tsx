@@ -2,10 +2,13 @@ const Aboutme = () => {
     
     return (
         <div  className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-xs justify-center md:my-15 my-20">
-            <h1 className="font-bold lg:text-4xl text-2xl text-black w-fit bg-orange px-2"> 
-                {/* {bg-orange px-2 } */}
-                About me
-            </h1>
+            <div className="relative">
+                <h1 className="font-semibold lg:text-3xl text-2xl border-b border-neutral-500 pb-2 w-fit"> 
+                    {/* { text-black w-fit bg-orange px-2 } */}
+                    About me
+                </h1>
+
+            </div>
             <div className="text-md flex flex-col gap-5 leading-relaxed tracking-normal font-sans">
                 <p>
                     I'm a SQL Developer turned Full Stack Engineer with a passion for crafting clean, aesthetic, and memorable digital experiences.

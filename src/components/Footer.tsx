@@ -5,8 +5,7 @@ import xlogo from "../assets/xlogo.svg";
 const Footer = () => {
 
     return (
-        <div className='flex flex-col gap-5 mb-10'>
-            <span className="flex justify-center lg:w-4xl md:w-2xl w-xs border border-neutral-500 mx-auto"></span>
+        <div className='flex flex-col gap-5 my-5'>
             {/* <div className='flex flex-col gap-5 py-5'> */}
                 <div className="flex justify-center items-center mx-auto md:gap-10 gap-5">
                     <a href="https://github.com/Vinit-M420"
@@ -36,7 +35,6 @@ const Footer = () => {
                     </h2>
                     <span className='text-gray-300'>-Kōtarō Bokuto</span>
                 </div> */}
-            {/* </div> */}
         </div>
     )
 }

@@ -10,6 +10,16 @@ import gsap from "gsap";
 const Hero = () => {
     const [mypic, setMyPic] = useState(false);
     const imageRef = useRef(null);
+    const heroRef = useRef<HTMLDivElement | null>(null);
+
+    // useEffect(() => {
+    //     if (heroRef.current) {
+    //     gsap.fromTo(heroRef.current, 
+    //     {y: -50, opacity: 0, duration: 1, ease: "power2.out", }, 
+    //     {y: 0, opacity: 1, duration: 1,});
+    //     }
+      
+    // }, []);
 
     useEffect(() => {
         const img = new Image();
@@ -36,7 +46,8 @@ const Hero = () => {
 
 
     return (
-        <div className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 
+        <div
+        className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 
         max-w-4xl mx-auto my-10 border border-neutral-700 lg:w-4xl md:w-2xl w-xs">
 
             <span className="absolute top-0 left-0 w-6 h-6 border-t-1 border-l-1 border-neutral-500"></span>
@@ -52,7 +63,7 @@ const Hero = () => {
                     className="lg:w-64 md:w-52 h-auto rounded block"
                 />
                 <div className="absolute bottom-2 left-2" onClick={handleImageSwap}>
-                    <RefreshCw className={`cursor-pointer text-black opacity-40`} />
+                    <RefreshCw className={`cursor-pointer text-black opacity-40 aria`} />
                 </div>
             </div>
 
@@ -62,16 +73,17 @@ const Hero = () => {
                     <span id="im" className="inline-block">I'm</span>{" "} 
                     <span className="text-black bg-orange rounded-xl px-2" id='intro'>Vinit.</span>              
                 </h1>
-                <h1 className="font-bold lg:text-4xl text-2xl text-black bg-green px-2 py-1 w-fit" 
-                    id='SDE'>
+                <h1 className="font-medium lg:text-3xl text-2xl text-neutral-300">
+                    {/* text-black bg-green px-2 py-1 w-fit */}
                     Software Engineer
                 </h1>
-                <h1 className="font-bold lg:text-4xl text-2xl">
+                <h1 className="font-medium lg:text-3xl text-2xl text-neutral-300">
                     <span id='basedin'>Based in</span>{" "}
-                    <span className="text-black px-2 bg-blue" id='mumbai'>Mumbai</span></h1>
-                <div className="flex gap-4 items-center">
-                    <h1 className="font-bold lg:text-3xl md:text-2xl text-xl bg-purple text-black w-fit px-2" 
-                        id='findme'>
+                    <span className="" id='mumbai'>Mumbai</span>
+                    </h1>
+                <div className="flex gap-4 items-center text-neutral-300">
+                    <h1 className="font-medium lg:text-3xl md:text-2xl text-xl" id='findme'>
+                        {/* bg-purple text-black w-fit px-2 */}
                         Find me at
                     </h1>
                     <div className="flex lg:gap-4 gap-2 items-center">

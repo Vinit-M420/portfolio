@@ -8,6 +8,7 @@ import { useNavbarStore } from "./store";
 import { useEffect, useRef } from 'react'
 import gsap from "gsap";
 import Footer from './components/Footer'
+// import Hero2 from './components/Hero2'
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       if (mainRef.current) {
       gsap.fromTo(mainRef.current, 
         {y: -50, opacity: 0, duration: 1, ease: "power2.out", }, 
-        {y: 0, opacity: 1, duration: 1,});
+        {y: 0, opacity: 1, duration: 1, delay:0.25});
       }
       
   }, []);
@@ -30,7 +31,7 @@ function App() {
 
       {navbarState === "about" && (
         <>
-          <div ref={mainRef}>
+          <div ref={mainRef}> 
             <Hero />
             <Aboutme />
           </div>
