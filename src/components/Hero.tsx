@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import bokuto from "../assets/bokuto.jpg";
 import me from "../assets/meactually.png"
 import github  from "../assets/github-mark-white.svg";
@@ -11,19 +11,24 @@ const Hero = () => {
     const [mypic, setMyPic] = useState(false);
     const imageRef = useRef(null);
 
+    useEffect(() => {
+        const img = new Image();
+        img.src = me;
+    }, []);
     
     const handleImageSwap = () => {
-        // Animate current image out (right)
+        if (!imageRef.current) return;
+
         gsap.to(imageRef.current, {
             x: '100%',          // Move image to the right
             duration: 0.25,
-            ease: 'power2.in',
+            ease: 'power1.in',
             onComplete: () => {
                 setMyPic(prev => !prev);
                 // Animate new image in (from left)
                 gsap.fromTo(imageRef.current,
                     { x: '-100%' }, // Start new image from left
-                    { x: '0%', duration: 0.25, ease: 'power2.out' }
+                    { x: '0%', duration: 0.25, ease: 'power1.out' }
                 );
             }
         });
@@ -82,10 +87,6 @@ const Hero = () => {
                             <img src={xlogo} alt='X' 
                                 className="lg:size-6 size-5 object-contain" />
                         </a>
-                        {/* <a href="mailto:your-email@example.com"
-                            className="w-10 h-10 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                            <Mail className="w-8 h-8" />
-                        </a> */}
                     </div>
                 </div>
             </div>
