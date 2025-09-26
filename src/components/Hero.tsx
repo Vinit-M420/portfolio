@@ -6,14 +6,17 @@ import xlogo from "../assets/xlogo.svg";
 import { RefreshCw } from 'lucide-react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { heroAniCompleteStore } from "../store";
 
-interface HeroProps {
-  setHeroComplete: (value: boolean) => void;
-}
+// interface HeroProps {
+//   setHeroComplete: (value: boolean) => void;
+// }
 
-const Hero = ({ setHeroComplete }: HeroProps ) => {
+const Hero = () => {
+    const { setHeroComplete } = heroAniCompleteStore();
     const [mypic, setMyPic] = useState(false);
-    const imageRef = useRef(null);
+    const [hidePicBtn, setHidePicBtn] = useState<boolean>(true);
+    const imageRef = useRef(null);  
     const heroRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
@@ -22,22 +25,30 @@ const Hero = ({ setHeroComplete }: HeroProps ) => {
     }, []);
 
     useGSAP(() => {
-    let tl = gsap.timeline();
-    
-    tl.fromTo(heroRef.current, 
-        {y: -50, opacity: 0}, 
-        {y: 0, opacity: 1, duration: 0.8, ease: "power2.out"});
+        let tl = gsap.timeline();
+        
+        tl.fromTo(heroRef.current, 
+            {y: -50, opacity: 0}, 
+            {y: 0, opacity: 1, duration: 0.8, ease: "power2.out"});
 
-    tl.from("#mypic", { opacity: 0, filter: "blur(10px)", duration: 0.4,
-                        ease: "power2.out" }, "-=0.1"); // Start 0.3s before heroRef ends
+        tl.from("#mypic", { opacity: 0, filter: "blur(10px)", duration: 0.4,
+                            ease: "power2.out" }, "-=0.1"); // Start 0.3s before heroRef ends
 
-    tl.from("#intro", { duration: 0.8, y: 50, opacity: 0, 
-                        stagger: 0.05, ease: "back.out(1.7)" }, "-=0.1").call(() => setHeroComplete(true));
+        tl.from("#intro", { duration: 0.8, y: 50, opacity: 0, 
+                            stagger: 0.05, ease: "back.out(1.7)" }, "-=0.1")
+            .call(() => setHeroComplete(true));
 
-    tl.from("#desc", { opacity: 0, x: -5, filter: "blur(10px)", duration: 0.6,
-                       stagger: 0.1, ease: "power2.out" }, "-=0.3");
+        tl.from("#desc", { opacity: 0, x: -5, filter: "blur(10px)", duration: 0.6,
+                        stagger: 0.1, ease: "power2.out" }, "-=0.3")
+            .call(() => {
+                setHidePicBtn(false);
+                // Fade in the button
+                gsap.fromTo("#picBtn", 
+                    { opacity: 0 }, 
+                    { opacity: 1, duration: 0.5, ease: "power2.out" });
+            });
             
-}, []);
+    }, []);
     
     const handleImageSwap = () => {
         if (!imageRef.current) return;
@@ -73,9 +84,11 @@ const Hero = ({ setHeroComplete }: HeroProps ) => {
                     ref={imageRef}
                     src={mypic ? me : bokuto}
                     alt='me'
-                    className="lg:w-64 md:w-52 h-auto rounded block"
+                    className="lg:w-64 md:w-52 h-auto rounded block "
                 />
-                <div className="absolute bottom-2 left-2" onClick={handleImageSwap}>
+                <div id="picBtn" 
+                className={`absolute bottom-2 left-2 ${hidePicBtn ? `opacity-0` : `opacity-100`}`} 
+                onClick={handleImageSwap}>
                     <RefreshCw className={`cursor-pointer text-black opacity-40 aria`} />
                 </div>
             </div>
@@ -116,7 +129,6 @@ const Hero = ({ setHeroComplete }: HeroProps ) => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

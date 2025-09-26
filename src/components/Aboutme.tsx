@@ -1,17 +1,19 @@
 import { useEffect, useRef } from "react";
+import { heroAniCompleteStore } from "../store";
 import gsap from "gsap";
 
-const Aboutme = ({ shouldAnimate }: { shouldAnimate: boolean }) => {
+const Aboutme = () => {
     const aboutRef = useRef<HTMLDivElement | null>(null);
+    const { heroComplete } = heroAniCompleteStore();
 
     useEffect(() => {
-        if (shouldAnimate && aboutRef.current) {
+        if (heroComplete && aboutRef.current) {
             gsap.fromTo(aboutRef.current, 
                 {y: -50, opacity: 0}, 
                 {y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.25});              
         }
         
-    }, [shouldAnimate]);
+    }, [heroComplete]);
 
     return (
         <div ref={aboutRef} style={{ opacity: 0 }}

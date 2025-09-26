@@ -6,13 +6,10 @@ import Projects from './components/Projects'
 import AllProjects from './components/AllProjects'
 import { useNavbarStore } from "./store";
 import Footer from './components/Footer'
-import { useState } from 'react'
 
 
 function App() {
   const { navbarState } = useNavbarStore();
-  const [heroComplete, setHeroComplete] = useState(false);
-
 
   return (
     <div>
@@ -20,8 +17,8 @@ function App() {
 
       {navbarState === "about" && (
         <>
-          <Hero setHeroComplete={setHeroComplete} />
-          <Aboutme shouldAnimate={heroComplete}/>
+          <Hero  />
+          <Aboutme />
           <Projects />
           <Footer />
         </>
