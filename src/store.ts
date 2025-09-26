@@ -17,11 +17,16 @@ export const useNavbarStore = create<NavbarProps>((set) => ({
 
 interface HeroAniCompleteState {
   heroComplete: boolean;
+  hasAnimationRun: boolean; 
   setHeroComplete: (state: boolean) => void;
+  setHasAnimationRun: (state: boolean) => void;
+
 }
 
 export const heroAniCompleteStore = create<HeroAniCompleteState>((set) => ({
   heroComplete: false,
-  setHeroComplete: (state: boolean) => set({ heroComplete: state })
+  hasAnimationRun: false, 
+  setHeroComplete: (state: boolean) => set({ heroComplete: state }),
+  setHasAnimationRun: (state: boolean) => set({ hasAnimationRun: state })
 }))
 

@@ -13,11 +13,12 @@ import { heroAniCompleteStore } from "../store";
 // }
 
 const Hero = () => {
-    const { setHeroComplete } = heroAniCompleteStore();
+    const { setHeroComplete, hasAnimationRun, setHasAnimationRun } = heroAniCompleteStore();
     const [mypic, setMyPic] = useState(false);
     const [hidePicBtn, setHidePicBtn] = useState<boolean>(true);
     const imageRef = useRef(null);  
     const heroRef = useRef<HTMLDivElement | null>(null);
+    
 
     useEffect(() => {
         const img = new Image();
@@ -25,8 +26,20 @@ const Hero = () => {
     }, []);
 
     useGSAP(() => {
-        let tl = gsap.timeline();
-        
+        if (hasAnimationRun) {
+            // Set immediate state without animation
+            if (heroRef.current) {
+                gsap.set(heroRef.current, { y: 0, opacity: 1 });
+                gsap.set("#mypic", { opacity: 1, filter: "blur(0px)" });
+                gsap.set("#intro", { y: 0, opacity: 1 });
+                gsap.set("#desc", { opacity: 1, x: 0, filter: "blur(0px)" });
+            }
+            setHeroComplete(true);
+            setHidePicBtn(false);
+            return;
+        }
+
+        let tl = gsap.timeline(); 
         tl.fromTo(heroRef.current, 
             {y: -50, opacity: 0}, 
             {y: 0, opacity: 1, duration: 0.8, ease: "power2.out"});
@@ -42,13 +55,14 @@ const Hero = () => {
                         stagger: 0.1, ease: "power2.out" }, "-=0.3")
             .call(() => {
                 setHidePicBtn(false);
+                setHasAnimationRun(true);
                 // Fade in the button
                 gsap.fromTo("#picBtn", 
                     { opacity: 0 }, 
                     { opacity: 1, duration: 0.5, ease: "power2.out" });
             });
             
-    }, []);
+    }, [hasAnimationRun]);
     
     const handleImageSwap = () => {
         if (!imageRef.current) return;

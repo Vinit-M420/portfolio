@@ -4,14 +4,20 @@ import gsap from "gsap";
 
 const Aboutme = () => {
     const aboutRef = useRef<HTMLDivElement | null>(null);
-    const { heroComplete } = heroAniCompleteStore();
+    const { heroComplete, hasAnimationRun } = heroAniCompleteStore();
 
     useEffect(() => {
+        if (hasAnimationRun){
+            gsap.to(aboutRef.current, {y:0, opacity: 100}); 
+            return
+        }
+
         if (heroComplete && aboutRef.current) {
             gsap.fromTo(aboutRef.current, 
                 {y: -50, opacity: 0}, 
                 {y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.25});              
         }
+        
         
     }, [heroComplete]);
 
