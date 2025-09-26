@@ -1,7 +1,21 @@
-const Aboutme = () => {
-    
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+const Aboutme = ({ shouldAnimate }: { shouldAnimate: boolean }) => {
+    const aboutRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (shouldAnimate && aboutRef.current) {
+            gsap.fromTo(aboutRef.current, 
+                {y: -50, opacity: 0}, 
+                {y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.25});              
+        }
+        
+    }, [shouldAnimate]);
+
     return (
-        <div  className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-xs justify-center md:my-15 my-20">
+        <div ref={aboutRef} style={{ opacity: 0 }}
+            className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-xs justify-center md:my-15 my-20">
             <div className="relative">
                 <h1 className="font-semibold lg:text-3xl text-2xl border-b border-neutral-500 pb-2 w-fit"> 
                     {/* { text-black w-fit bg-orange px-2 } */}
