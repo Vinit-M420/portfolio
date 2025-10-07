@@ -19,10 +19,10 @@ const Navbar = () => {
                 Projects
             </a>
             {/* <a className={`md:text-lg text-md cursor-pointer px-2
-                ${navbarState === 'resume' ? `text-black font-bold bg-blue rounded-xl` : `
+                ${navbarState === 'skills' ? `text-black font-bold bg-blue rounded-xl` : `
                     text-gray-300 hover:bg-gray-500 hover:rounded-2xl hover:text-white`}`}
-                onClick={() => setNavbarState('resume')}>
-                Resume
+                onClick={() => setNavbarState('skills')}>
+                Skills
             </a> */}
         </nav>
     )

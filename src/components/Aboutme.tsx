@@ -26,7 +26,6 @@ const Aboutme = () => {
             className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-xs justify-center md:my-15 my-20">
             <div className="relative">
                 <h1 className="font-semibold lg:text-3xl text-2xl border-b border-neutral-500 pb-2 w-fit"> 
-                    {/* { text-black w-fit bg-orange px-2 } */}
                     About me
                 </h1>
 

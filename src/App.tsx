@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import AllProjects from './components/AllProjects'
 import { useNavbarStore } from "./store";
 import Footer from './components/Footer'
+import Skills from './components/Skills'
 
 
 function App() {
@@ -19,16 +20,14 @@ function App() {
         <>
           <Hero  />
           <Aboutme />
+          <Skills />
           <Projects />
           <Footer />
         </>
       )}
 
       {navbarState === "projects" && ( <AllProjects /> )}
-
-      {navbarState === "resume" && (
-        <></>
-      )}
+      {navbarState === "skills" && ( <></> )}
 
     </div>
   )

@@ -22,7 +22,7 @@ const AllProjects = () => {
 
     return (
         <div ref={allPRef} className="flex flex-col gap-5 mx-auto max-w-4xl lg:w-4xl md:w-2xl w-xs mt-20">
-            <h1 className="font-bold lg:text-4xl text-2xl border-b border-neutral-500 pb-2 w-fit"> 
+            <h1 className="font-bold lg:text-4xl text-2xl pb-2 w-fit"> 
                 {/*  text-black w-fit bg-green px-2  */}
                 All Projects
             </h1>

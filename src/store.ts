@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type NavbarState = "about" | "projects" | "resume";
+export type NavbarState = "about" | "projects" | "skills";
 
 export interface NavbarProps {
   navbarState: NavbarState;
