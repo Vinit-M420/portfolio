@@ -1,26 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #1E1E1E;
+  --color-text: #FFFFFF;
+  --color-orange: #FF5F57;
+  --color-green: #3CCF91;
+  --color-blue: #4AA8FF;
+  --color-purple: #9B6BFF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer utilities {
+  .bg-orange { background-color: #FF5F57; }
+  .bg-green { background-color: #3CCF91; }
+  .bg-blue { background-color: #4AA8FF; }
+  .bg-purple { background-color: #9B6BFF; }
+  .text-orange { color: #FF5F57; }
+  .text-green { color: #3CCF91; }
+  .text-blue { color: #4AA8FF; }
+  .text-purple {color: #9B6BFF; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  margin: 0;
+  font-family: 'Lora', serif;
+  color: var(--color-text);
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* Prevent scrollbars but still allow scrolling */
+body {
+  -ms-overflow-style: none;  /* IE/Edge */
+  overflow-y: scroll;        /* ensures scrolling still works */
 }
