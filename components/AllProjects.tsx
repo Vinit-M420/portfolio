@@ -63,7 +63,7 @@ export default function AllProjects(){
                 {/* Card 2 - Reddit Data Pipeline */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     <div className="aspect-video overflow-hidden rounded-t-xl">
-                        <img src="/reddit_arch.drawio.svg" 
+                        <img  src="/redditarch.png"
                             className="w-full h-full object-cover" />
                     </div>
                     

@@ -34,12 +34,11 @@ const Aboutme = () => {
             </div>
             <div className="text-md flex flex-col gap-5 leading-relaxed tracking-normal font-sans">
                 <p>
-                    I'm a SQL Developer turned Full Stack Engineer with a passion for crafting clean, aesthetic, and memorable digital experiences.
-                    I specialize in the React.js, Node.js, and Express.js ecosystem, leveraging TypeScript to build scalable frontends and reliable backends. 
+                    I am a dedicated Full Stack Engineer with a passion for creating clean, minimal digital brands that contribute to sustainable, long-term success. I specialize in Next.js and React, utilizing TypeScript to develop visually appealing frontends and robust, secure backends.
                 </p>
                 
                 <p>
-                    Besides work, I enjoy watching movies & anime, meeting new people, lifting weights and trying out new food.                
+                    In my free time, I enjoy meeting new people, lifting weights, watching movies & anime, and trying out new food.                
                 </p>
                 
                 <p>

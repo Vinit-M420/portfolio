@@ -12,7 +12,6 @@ const Hero = () => {
     const [hidePicBtn, setHidePicBtn] = useState<boolean>(true);
     const imageRef = useRef<HTMLImageElement | null>(null);
     const heroRef = useRef<HTMLDivElement | null>(null);
-    let me;
 
     // useEffect(() => {
     //     const img = new Image();

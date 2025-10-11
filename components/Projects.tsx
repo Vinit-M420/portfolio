@@ -1,15 +1,16 @@
 "use client";
 import { ExternalLink, MoveRight  } from 'lucide-react';
 import github  from "../assets/github-mark-white.svg";
-import { useNavbarStore } from "../app/store";
+// import { useNavbarStore } from "../app/store";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-    const {  setNavbarState } = useNavbarStore();
+    // const {  setNavbarState } = useNavbarStore();
     const projectRef = useRef<HTMLDivElement | null>(null);
     
     useEffect(() => {
@@ -75,9 +76,9 @@ const Projects = () => {
                 {/* Card 2 - Reddit Data Pipeline */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     <div className="aspect-video overflow-hidden rounded-t-xl">
-                        <img src="/reddit_arch.drawio.svg" 
+                        <img  src="/redditarch.png" 
                             className="w-full h-full object-cover" />
-                    </div>
+                    </div>            
                     
                     <div className="flex flex-col flex-grow p-5 gap-3">
                         <h1 className='text-white text-lg font-bold leading-relaxed'>
@@ -102,17 +103,15 @@ const Projects = () => {
 
             </div>
             
-            <a  className="text-white border border-neutral-700 text-lg flex gap-2 cursor-pointer
+            <Link href="/projects"
+                className="text-white border border-neutral-700 text-lg flex gap-2 cursor-pointer
                             justify-center items-center transition-all duration-200  rounded-md py-1
                             hover:border-[#FF5F57] hover:bg-stone-800 mx-auto lg:px-20 px-10
                             hover:gap-4 hover:shadow-sm hover:shadow-[#FF5F57]"
-                onClick={() => {
-                    setNavbarState("projects");
-                    window.scrollTo(0, 0);
-                    }}>
+                >
                     Show All Projects
                 <MoveRight className='size-5'/>
-            </a>
+            </Link>
         </div>
     )
 }
