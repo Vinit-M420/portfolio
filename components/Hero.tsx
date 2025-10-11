@@ -1,18 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import bokuto from "../public/bokuto.jpg";
-import me from "../public/meactually.png"
-// import github from "../public/github-mark-white.svg";
-import xlogo from "../public/xlogo.svg";
 import { RefreshCw } from 'lucide-react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { heroAniCompleteStore } from "../app/store";
 
-// interface HeroProps {
-//   setHeroComplete: (value: boolean) => void;
-// }
 
 const Hero = () => {
     const { setHeroComplete, hasAnimationRun, setHasAnimationRun } = heroAniCompleteStore();
@@ -20,7 +12,7 @@ const Hero = () => {
     const [hidePicBtn, setHidePicBtn] = useState<boolean>(true);
     const imageRef = useRef<HTMLImageElement | null>(null);
     const heroRef = useRef<HTMLDivElement | null>(null);
-    
+    let me;
 
     // useEffect(() => {
     //     const img = new Image();
@@ -99,7 +91,7 @@ const Hero = () => {
                 <img
                     id="mypic"
                     ref={imageRef}
-                    src={mypic ? "/meactually.png" : "/bokuto.jpg"}
+                    src={mypic ? "/bokuto.jpg" : "/meactually.png" }
                     alt="Vinit's portrait"
                     className="lg:w-64 md:w-52 h-auto rounded block"
                 />
