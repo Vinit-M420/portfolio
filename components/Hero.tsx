@@ -32,7 +32,7 @@ const Hero = () => {
             return;
         }
 
-        let tl = gsap.timeline(); 
+        const tl = gsap.timeline(); 
         tl.fromTo(heroRef.current, 
             {y: -50, opacity: 0}, 
             {y: 0, opacity: 1, duration: 0.8, ease: "power2.out"});
@@ -104,7 +104,7 @@ const Hero = () => {
             <div className="flex flex-col md:items-start items-center gap-5">
                 <h1 className="font-bold lg:text-5xl text-4xl" id="intro">
                     <span id="hey" className="inline-block">Hey</span>{" "}
-                    <span id="im" className="inline-block">I'm</span>{" "} 
+                    <span id="im" className="inline-block">{`I'm`}</span>{" "} 
                     <span className="text-black bg-orange rounded-xl px-2">Vinit.</span>              
                 </h1>
                 
