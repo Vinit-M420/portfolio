@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from 'next/link';
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +42,7 @@ const Projects = () => {
                 {/* Card 1 - TripBucket */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     <div className="aspect-video overflow-hidden rounded-t-xl">
-                        <img src='/tripbucket.png' 
+                        <Image src='/tripbucket.png' alt='tripbucket-banner' width={800}  height={600}
                             className="w-full h-full object-cover" />
                     </div>
                     
@@ -66,7 +67,8 @@ const Projects = () => {
                                 className="col-span-1 text-white border border-neutral-700 text-md flex gap-2 
                                 justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
                                 hover:border-zinc-600 hover:bg-stone-800">
-                                <img src='/github-mark-white.svg' alt='Github' className="w-4 h-4 object-contain" />
+                                <Image src='/github-mark-white.svg' alt='Github' width={16} height={16} 
+                                    className="w-4 h-4 object-contain" />
                                 <span>Github</span>
                             </a>   
                         </div>
@@ -76,7 +78,7 @@ const Projects = () => {
                 {/* Card 2 - Reddit Data Pipeline */}
                 <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
                     <div className="aspect-video overflow-hidden rounded-t-xl">
-                        <img  src="/redditarch.png" 
+                        <Image  src="/redditarch.png" alt='reddit-banner' width={800}  height={600}
                             className="w-full h-full object-cover" />
                     </div>            
                     
@@ -94,7 +96,8 @@ const Projects = () => {
                                 className="col-span-1 text-white border border-neutral-700 text-md flex gap-2 
                                 justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
                                 hover:border-zinc-600 hover:bg-stone-800">
-                                <img src='/github-mark-white.svg' alt='Github' className="w-4 h-4 object-contain" />
+                                <Image src='/github-mark-white.svg' alt='Github' width={16} height={16}
+                                    className="w-4 h-4 object-contain" />
                                 <span>Github</span>
                             </a>   
                         </div>

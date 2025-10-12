@@ -4,7 +4,7 @@ import { RefreshCw } from 'lucide-react';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { heroAniCompleteStore } from "../app/store";
-
+import Image from "next/image";
 
 const Hero = () => {
     const { setHeroComplete, hasAnimationRun, setHasAnimationRun } = heroAniCompleteStore();
@@ -87,12 +87,14 @@ const Hero = () => {
             <span className="absolute bottom-0 right-0 w-6 h-6 border-b-1 border-r-1 border-neutral-500"></span>
             
             <div className="relative lg:w-64 md:w-52 w-48 h-auto rounded overflow-hidden">
-                <img
-                    id="mypic"
-                    ref={imageRef}
-                    src={mypic ? "/bokuto.jpg" : "/meactually.png" }
-                    alt="Vinit's portrait"
-                    className="lg:w-64 md:w-52 h-auto rounded block"
+                <Image
+                        id="mypic"
+                        ref={imageRef}
+                        src={mypic ? "/bokuto.jpg" : "/meactually.png"}
+                        alt="Vinit's portrait"
+                        width={256}
+                        height={256}
+                        className="lg:w-64 md:w-52 h-auto rounded block"
                 />
                 <div id="picBtn" 
                 className={`absolute bottom-2 left-2 ${hidePicBtn ? `opacity-0` : `opacity-100`}`} 
@@ -125,14 +127,14 @@ const Hero = () => {
                         <a href="https://github.com/Vinit-M420"
                         className="w-10 h-10 flex items-center justify-center opacity-70
                                     hover:opacity-100 transition-opacity">
-                            <img src="/github-mark-white.svg"
-                                    alt='Github' 
+                            <Image src="/github-mark-white.svg"  
+                                    alt='Github' width={32} height={32}
                                 className="lg:size-8 size-7 object-contain" />
                         </a>
                         <a href="https://x.com/vinit_here"
                             className="w-10 h-10 flex items-center justify-center opacity-70 
                                 hover:opacity-100 transition-opacity">
-                            <img src="/xlogo.svg" alt='X' 
+                            <img src="/xlogo.svg" alt='X' width={32} height={32}
                                 className="lg:size-6 size-5 object-contain" />
                         </a>
                     </div>
