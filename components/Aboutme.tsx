@@ -42,7 +42,7 @@ const Aboutme = () => {
                 </p>
                 
                 <p>
-                    If you've got an idea or want to collaborate on an exciting project, feel free to drop me a DM.
+                {`If you've got an idea or want to collaborate on an exciting project, feel free to drop me a DM.`}
                 </p>
             </div>
         </div>

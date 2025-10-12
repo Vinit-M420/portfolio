@@ -1,7 +1,7 @@
 "use client";
 import { Mail } from 'lucide-react';
-import github  from "../assets/github-mark-white.svg";
-import xlogo from "../assets/xlogo.svg";
+import Image from 'next/image';
+
 
 const Footer = () => {
 
@@ -12,13 +12,13 @@ const Footer = () => {
                     <a href="https://github.com/Vinit-M420"
                         className="w-10 h-10 flex items-center justify-center opacity-70 
                             hover:opacity-100 transition-opacity">
-                        <img src='/github-mark-white.svg' alt='Github' 
+                        <Image src='/github-mark-white.svg' alt='Github' width={32} height={32}  
                             className="lg:size-8 size-7 object-contain" />
                     </a>
                     <a href="https://x.com/vinit_here"
                         className="w-10 h-10 flex items-center justify-center opacity-70 
                         hover:opacity-100 transition-opacity">
-                        <img src="/xlogo.svg" alt='X' 
+                        <Image src="/xlogo.svg" alt='X' width={32} height={32}
                             className="lg:size-6 size-5 object-contain" />
                     </a>
                     
