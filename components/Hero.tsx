@@ -13,10 +13,12 @@ const Hero = () => {
     const imageRef = useRef<HTMLImageElement | null>(null);
     const heroRef = useRef<HTMLDivElement | null>(null);
 
-    // useEffect(() => {
-    //     const img = new Image();
-    //     img.src = me;
-    // }, []);
+    useEffect(() => {
+    const img1 = new window.Image();
+    img1.src = "/meactually.png"; // Preload first image
+    const img2 = new window.Image();
+    img2.src = "/bokuto.jpg"; // Preload second image
+}, []);
 
     useGSAP(() => {
         if (hasAnimationRun) {

@@ -1,6 +1,7 @@
 "use client";
 import { Mail } from 'lucide-react';
 import Image from 'next/image';
+// import NavigationButton from './NavigationBtn';
 
 
 const Footer = () => {
@@ -21,21 +22,27 @@ const Footer = () => {
                         <Image src="/xlogo.svg" alt='X' width={32} height={32}
                             className="lg:size-6 size-5 object-contain" />
                     </a>
-                    
                     <a href="mailto:hey@vinitm.com" 
                         className="flex items-center justify-center opacity-70 
                         hover:opacity-100 transition-opacity">
                         <Mail className='size-8'/>
-                        {/* <h2 className='tracking-wide'>hello@vinitm.com</h2> */}
-                    </a>                   
+                        </a>                   
+
+                    {/* <NavigationButton href="https://github.com/Vinit-M420" text="Github" 
+                    icon={<Image src='/github-mark-white.svg' alt='Github' width={32} height={32}  
+                            className="lg:size-8 size-7 object-contain" />}
+                     />
+
+                    <NavigationButton href="https://x.com/vinit_here" text="Twitter" 
+                    icon={<Image src="/xlogo.svg" alt='X' width={26} height={26}
+                            className="lg:size-6 size-5 object-contain " />} />
+
+
+                    <NavigationButton href="mailto:hey@vinitm.com" text="Mail" 
+                        icon={<Mail className='size-8 text-md'  />} /> */}
+        
                 </div>
 
-                {/* <div className='flex flex-col justify-center text-center mx-auto md:w-sm w-xs'>
-                    <h2 className='text-gray-100 md:text-lg text-md'>
-                        "Think about what's fun... not what's easy." 
-                    </h2>
-                    <span className='text-gray-300'>-Kōtarō Bokuto</span>
-                </div> */}
         </div>
     )
 }
