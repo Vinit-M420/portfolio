@@ -34,7 +34,7 @@ const Aboutme = () => {
             </div>
             <div className="text-md flex flex-col gap-5 leading-relaxed tracking-normal font-sans">
                 <p>
-                    I am a dedicated Full Stack Engineer with a passion for creating clean, minimal digital brands that contribute to sustainable, long-term success. I specialize in Next.js and React, utilizing TypeScript to develop visually appealing frontends and robust, secure backends.
+                    I am a dedicated Full Stack Engineer with a passion for creating clean, minimal digital brands that contributes to sustainable, long-term success. I specialize in Next.js and React, utilizing TypeScript to develop visually appealing frontends and robust, secure backends.
                 </p>
                 
                 <p>

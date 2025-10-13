@@ -4,7 +4,6 @@ import "./globals.css";
 export const metadata = {
   title: "Vinit M | Full Stack Developer",
   icons: [
-    // { rel: "icon", url: "/favicon.ico", type: "image/x-icon" }, // Standard favicon
     { rel: "icon", url: "/favicon.png", type: "image/png", sizes: "32x32" }, // PNG fallback
   ],
   description:
