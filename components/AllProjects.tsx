@@ -1,8 +1,8 @@
 "use client";
-import { ExternalLink } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from "gsap";
-import Image from "next/image";
+import { ProjectCard } from './ProjectCard';
+import { ProjectItems } from '@/items/projectItems';
 
 
 export default function AllProjects(){
@@ -26,102 +26,10 @@ export default function AllProjects(){
             </h1>
 
             <div className="grid md:grid-cols-2 grid-cols-1 gap-5 justify-center items-stretch my-10">
-                {/* Card 1 - TripBucket */}
-                <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    <div className="aspect-video overflow-hidden rounded-t-xl">
-                         <Image src='/tripbucket.png' alt='tripbucket-banner' width={800}  height={600}
-                            className="w-full h-full object-cover" />
-                    </div>
-                    
-                    <div className="flex flex-col flex-grow p-5 gap-3">
-                        <h1 className='text-white text-lg font-bold leading-relaxed'>
-                            TripBucket
-                        </h1>
-
-                        <h2 className='text-white text-sm font-light font-sans flex-grow'>
-                            Build your travel bucket list along with its itinerary. Proud of your itinerary, you can share it.
-                        </h2>
-
-                        <div className='grid grid-cols-2 gap-2'>
-                            <a rel="external" target='_blank' href="https://tripbucket.vercel.app/" 
-                                className="col-span-1 text-white border border-neutral-700 text-md flex gap-2 
-                                justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
-                                hover:border-zinc-600 hover:bg-stone-800">
-                                <ExternalLink className='size-4'/>
-                                <span>View</span>   
-                            </a>
-                            <a rel="external" target='_blank' href="https://github.com/Vinit-M420/TripBucket" 
-                                className="col-span-1 text-white border border-neutral-700 text-md flex gap-2 
-                                justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
-                                hover:border-zinc-600 hover:bg-stone-800">
-                                <Image src='/github-mark-white.svg' alt='Github' width={16} height={16}
-                                    className="w-4 h-4 object-contain" />
-                                <span>Github</span>
-                            </a>   
-                        </div>
-                    </div>
-                </div>
-
-                {/* Card 2 - Reddit Data Pipeline */}
-                <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    <div className="aspect-video overflow-hidden rounded-t-xl">
-                        <Image  src="/redditarch.png" alt='reddit-banner' width={800}  height={600}
-                            className="w-full h-full object-cover" />
-                    </div>
-                    
-                    <div className="flex flex-col flex-grow p-5 gap-3">
-                        <h1 className='text-white text-lg font-bold leading-relaxed'>
-                            Reddit Data Pipeline
-                        </h1>
-
-                        <h2 className='text-white text-sm font-light font-sans flex-grow'>
-                            A complete Data pipeline of Reddit using PRAW, Airflow and GCP                    
-                        </h2>
-
-                        <div className='grid grid-cols-1 gap-2'>
-                            <a rel="external" target='_blank' href="https://github.com/Vinit-M420/reddit-data-pipeline-gcp" 
-                                className="col-span-1 text-white border border-neutral-700 text-md flex gap-2 
-                                justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
-                                hover:border-zinc-600 hover:bg-stone-800">
-                                <Image src='/github-mark-white.svg' alt='Github' width={16} height={16}
-                                    className="w-4 h-4 object-contain" />
-                                <span>Github</span>
-                            </a>   
-                        </div>
-                    </div>
-                </div>
-
-                {/* Card 3 - Mock Bookmark */}
-                <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
-                    <div className="aspect-video overflow-hidden rounded-t-xl">
-                        <Image src="/bookmark.png" alt='bookmark-site-banner' width={800} height={600}
-                            className="w-full h-full object-cover" />
-                    </div>
-                    
-                    <div className="flex flex-col flex-grow p-5 gap-3">
-                        <h1 className='text-white text-lg font-bold leading-relaxed'>
-                            Bookmark Manager 
-                        </h1>
-
-                        <h2 className='text-white text-sm font-light font-sans flex-grow'>
-                            Frontend only website built using Tailwind CSS
-                        </h2>
-
-                        <div className='grid grid-cols-1 gap-2'>
-                            <a rel="external" target='_blank' href="https://tailwindbookmark-vinit.vercel.app/" 
-                                className="col-span-1 text-white border border-neutral-700 text-md flex gap-2 
-                                justify-center items-center transition-all duration-200 cursor-pointer rounded-md py-1
-                                hover:border-zinc-600 hover:bg-stone-800">
-                                <ExternalLink className='size-4'/>
-                                <span>View</span>   
-                            </a>
-            
-                        </div>
-                    </div>
-                </div>
-
+                {ProjectItems.map((project, index) => (
+                    <ProjectCard key={index} project={project} />
+                ))}
             </div>
-            
         </div>
     )
 }
