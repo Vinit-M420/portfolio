@@ -2,6 +2,7 @@ import { ProjectType } from "@/types/projecttype"
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
+/// strange that the buttons are side by side now.
 export const ProjectCard = ({ project }: { project: ProjectType }) => {
     return (
         <div className="col-span-1 flex flex-col border border-neutral-700 rounded-xl h-full">
@@ -19,7 +20,7 @@ export const ProjectCard = ({ project }: { project: ProjectType }) => {
                     {project.description}
                 </h2>
 
-                <div className={`grid grid-cols-${project.linkColSpanEach} gap-2 mt-4`}>
+                <div className={`grid gap-2 mt-4 ${project.linkColSpanEach === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                     { project.projectUrl ?  
                     <a rel="external" target='_blank' href={project.projectUrl}
                         className={`col-span-1 text-white border border-neutral-700 text-md flex gap-2 
