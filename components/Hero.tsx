@@ -12,13 +12,14 @@ const Hero = () => {
     const [hidePicBtn, setHidePicBtn] = useState<boolean>(true);
     const imageRef = useRef<HTMLImageElement | null>(null);
     const heroRef = useRef<HTMLDivElement | null>(null);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
-    const img1 = new window.Image();
-    img1.src = "/meactually.png"; // Preload first image
-    const img2 = new window.Image();
-    img2.src = "/bokuto.jpg"; // Preload second image
-}, []);
+        const img1 = new window.Image();
+        img1.src = "/meactually.png"; // Preload first image
+        const img2 = new window.Image();
+        img2.src = "/bokuto.jpg"; // Preload second image
+    }, []);
 
     useGSAP(() => {
         if (hasAnimationRun) {
@@ -79,7 +80,7 @@ const Hero = () => {
 
 
     return (
-        <div ref={heroRef} 
+        <div ref={heroRef} style={{ opacity: 0, transform: 'translateY(-50px)' }}
         className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 
         max-w-4xl mx-auto my-10 border border-neutral-700 lg:w-4xl md:w-2xl w-xs">
 
@@ -89,14 +90,22 @@ const Hero = () => {
             <span className="absolute bottom-0 right-0 w-6 h-6 border-b-1 border-r-1 border-neutral-500"></span>
             
             <div className="relative lg:w-64 md:w-52 w-48 h-auto rounded overflow-hidden">
-                <Image
-                        id="mypic"
-                        ref={imageRef}
-                        src={mypic ? "/bokuto.jpg" : "/meactually.png"}
-                        alt="Vinit's portrait"
-                        width={256}
-                        height={256}
-                        className="lg:w-64 md:w-52 h-auto rounded block"
+            {!imageLoaded && (
+                <div className="w-full h-full bg-neutral-700 animate-pulse rounded" />
+            )}
+            <Image  priority 
+                    loading="eager"
+                    id="mypic"
+                    ref={imageRef}
+                    style={{ opacity: 0, filter: 'blur(10px)' }}
+                    src={mypic ? "/bokuto.jpg" : "/meactually.png"}
+                    alt="Vinit's portrait"
+                    width={256}
+                    height={256}
+                    className="lg:w-64 md:w-52 h-auto rounded block"
+                    onLoadingComplete={() => setImageLoaded(true)}
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+pPwAEdQESmQAVwQAAAABJRU5ErkJggg=="
                 />
                 <div id="picBtn" 
                 className={`absolute bottom-2 left-2 ${hidePicBtn ? `opacity-0` : `opacity-100`}`} 

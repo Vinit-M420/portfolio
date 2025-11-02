@@ -1,5 +1,6 @@
 // app/layout.tsx
 import "./globals.css";
+import Head from "next/head";
 
 export const metadata = {
   title: "Vinit M | Full Stack Developer",
@@ -25,6 +26,20 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
+      <head>
+      <link
+        rel="preload"
+        as="image"
+        href="/meactually.png"
+        imageSrcSet="/meactually.png 1x"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/bokuto.jpg"
+        imageSrcSet="/bokuto.jpg 1x"
+      />
+      </head>
       <body>{children}</body>
     </html>
   );
