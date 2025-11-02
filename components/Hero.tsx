@@ -93,20 +93,19 @@ const Hero = () => {
             {!imageLoaded && (
                 <div className="w-full h-full bg-neutral-700 animate-pulse rounded" />
             )}
-            <Image  priority 
-                    loading="eager"
-                    id="mypic"
-                    ref={imageRef}
-                    style={{ opacity: 0, filter: 'blur(10px)' }}
-                    src={mypic ? "/bokuto.jpg" : "/meactually.png"}
-                    alt="Vinit's portrait"
-                    width={256}
-                    height={256}
-                    className="lg:w-64 md:w-52 h-auto rounded block"
-                    onLoadingComplete={() => setImageLoaded(true)}
-                    placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+pPwAEdQESmQAVwQAAAABJRU5ErkJggg=="
-                />
+            <Image
+                id="mypic"
+                ref={imageRef}
+                src={mypic ? "/bokuto.jpg" : "/meactually.png"}
+                alt="Vinit's portrait"
+                width={256}
+                height={256}
+                className="lg:w-64 md:w-52 h-auto rounded block"
+                onLoadingComplete={() => setImageLoaded(true)}
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+pPwAEdQESmQAVwQAAAABJRU5ErkJggg=="
+                loading="eager" // Critical: load immediately
+            />
                 <div id="picBtn" 
                 className={`absolute bottom-2 left-2 ${hidePicBtn ? `opacity-0` : `opacity-100`}`} 
                 onClick={handleImageSwap}>
