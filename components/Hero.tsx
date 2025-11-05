@@ -80,7 +80,7 @@ const Hero = () => {
 
 
     return (
-        <div ref={heroRef} style={{ opacity: 0, transform: 'translateY(-50px)' }}
+        <main ref={heroRef} style={{ opacity: 0, transform: 'translateY(-50px)' }}
         className="relative flex md:flex-row justify-center items-center flex-col p-6 lg:gap-20 gap-10 
         max-w-4xl mx-auto my-10 border border-neutral-700 lg:w-4xl md:w-2xl w-xs">
 
@@ -104,7 +104,7 @@ const Hero = () => {
                 onLoadingComplete={() => setImageLoaded(true)}
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+pPwAEdQESmQAVwQAAAABJRU5ErkJggg=="
-                loading="eager" // Critical: load immediately
+                loading="eager" 
             />
                 <div id="picBtn" 
                 className={`absolute bottom-2 left-2 ${hidePicBtn ? `opacity-0` : `opacity-100`}`} 
@@ -144,13 +144,13 @@ const Hero = () => {
                         <a href="https://x.com/vinit_here"
                             className="w-10 h-10 flex items-center justify-center opacity-70 
                                 hover:opacity-100 transition-opacity">
-                            <img src="/xlogo.svg" alt='X' width={32} height={32}
+                            <Image src="/xlogo.svg" alt='X' width={32} height={32}
                                 className="lg:size-6 size-5 object-contain" />
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

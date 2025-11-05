@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import { heroAniCompleteStore } from "../app/store";
 import gsap from "gsap";
@@ -21,7 +20,7 @@ const Aboutme = () => {
         }
         
         
-    }, [heroComplete]);
+    }, [heroComplete, hasAnimationRun]);
 
     return (
         <div ref={aboutRef} style={{ opacity: 0 }}
@@ -34,11 +33,11 @@ const Aboutme = () => {
             </div>
             <div className="text-md flex flex-col gap-5 leading-relaxed tracking-normal font-sans">
                 <p>
-                    I am a dedicated Full Stack Engineer with a passion for creating clean, minimal digital brands that contributes to sustainable, long-term success. I specialize in Next.js and React, utilizing TypeScript to develop visually appealing frontends and robust, secure backends.
+                    {`I am a dedicated Full Stack Engineer with a passion for creating clean, minimal digital brands that contributes to sustainable, long-term success. I specialize in Next.js and React, utilizing TypeScript to develop visually appealing frontends and robust, secure backends.`}
                 </p>
                 
                 <p>
-                    In my free time, I enjoy meeting new people, lifting weights, watching movies & anime, and trying out new food.                
+                    {`In my free time, I enjoy meeting new people, lifting weights, watching movies & anime, and trying out new food.`}                
                 </p>
                 
                 <p>
